@@ -1,1 +1,34 @@
 \chapter{Podsumowanie}
+
+% Głównym celem pracy było przeanalizowanie możliwości różnych architektur głębokich sieci
+% neuronowych, trenując je i stosując do rozwiązania problemu przetwarzania obrazów wykorzy-
+% stując zbiory danych przedstawiających codzienne sytuacje na drogach.
+% Pozostała część projektu poświęcona jest zaimplementowaniu prototypu systemu służą-
+% cego do analizy ruchu drogowego, pod kątem wykrywania sytuacji niebezpiecznych z wykorzy-
+% staniem wyuczonych wcześniej głębokich sieci. Do jego zadań powinno należeć rozpoznanie
+% na obrazie obiektów, wszystkich obiektów niedaleko obserwatora tj. piesi, samochody, rowery,
+% ubytki w nawierzchni, określenie typu takiej sytuacji oraz poinformowanie użytkownika o ewen-
+% tualnym niebezpieczeństwie.
+
+\hspace{0.5cm}
+W pracy przedstawiono możliwości i propozycję zastosowania wybranych architektur głębokich sieci neuronowych jako rodzaju detektora niebezpiecznych sytuacji na drogach. Sieci zostały przetrenowane na ogólnodostępnych i opisanych danych pochodzących z wielu miast na całym świecie, ograniczając się do detekcji pojazdów i pieszych oraz różnych rodzajów uszkodzeń nawierzchni. W rezultacie otrzymano wiele modeli sieci, o różnych stopniach poprawności oraz model, który charakteryzował się najlepszymi wynikami detekcji podczas przeprowadzonych badań. Na podstawie otrzymanych wyników możliwe było również rozpoznanie elementów, które wywierały największy wpływ na jakość treningu i działanie sieci, w celu stałego poprawiania jej możliwości.
+
+\hspace{0.5cm}
+Stosując otrzymany detektor możliwe było stworzenie prototypu systemu
+służącego do wykrywania opisanych w pracy niebezpiecznych sytuacji i uszkodzeń na drodze. 
+% Opracowana przez nas dydaktyczno - symulacyjna aplikacja komputerowa może być wykorzystywana przez osoby, które prowadzą zajęcia związane z szeroko rozumianą sferą sztucznych sieci neuronowych, stanowić będzie wtedy bardzo pomocny element pokazujący praktyczne aspekty wykładanych zagadnień teoretycznych. Pozwala „namacalnie” przekonać się o możliwościach, różnorodności oraz elementach mających wpływ na konstrukcję, uczenie, testowanie oraz wykorzystywanie sztucznych sieci neuronowych.
+% Dla osób samokształcących się w temacie sieci neuronowych nasza aplikacja stanowić może bardzo ciekawą ofertę, która z jednej strony pomoże zrozumieć konstrukcję oraz działanie sieci neuronowych zaś z drugiej strony stanowi szeroki pomost pomiędzy wiedzą teoretyczną (zawartą w Pomocy) a praktycznymi aspektami jej implementacji i wykorzystania. Istotą tego mariażu jest skumulowanie w jednym miejscu - programie komputerowym - tych dwu aspektów dydaktyki: wiedzy teoretycznej bezpośrednio przekładającej się na symulację i propozycję praktycznego wykorzystania.
+
+
+\hspace{0.5cm}
+Architektura głębokich sieci neuronowych wymaga jednak dużej ilości danych oraz pamięci, która może nie być dostępna dla każdego urządzenia. Konflikty związane z wersjami biblioteki Tensorflow, GPU i architektury obliczeniowej CUDA okazały się nie do rozwiązania, dlatego Google Colaboratory zostało wyprowadzone jako zamiennik. Urządzenie o ogromnej mocy obliczeniowej umożliwiło przeprowadzenie wszystkich wymaganych badań ale również miało nałożone limity odnośnie pamięci. Rezultaty otrzymanego modelu można uznać jako satysfakcjonujące ale możliwe do ulepszenia. Rozwiązując problem związany z pamięcią, model sieci powinien zostać poddany treningowi wykorzystując pełny zbiór danych uczących (zbiór CityScapes zawiera ponad 20 tysięcy zdjęć z adnotacjami, w pracy wykorzystane zostało ok. 1.2 tysiące) oraz możliwie dłuższe uczenie sieci.
+
+\section{Działanie systemu i możliwości rozwoju}
+\hspace{0.5cm}
+W opisywanej pracy system informuje użytkownika o niebezpieczeństwie jedynie przy spełnieniu jednego warunku tj. znalezieniu się obiektu w ustawionym przez użytkownika polu przed samochodem. W celu dokładnego określenia czy sytuacja grozi kolizją ze znajdującym się nie przed pojazdem pieszym lub innym samochodem, system powinien korzystać z większej ilości danych związanych z maszyną i jej otoczeniem oraz parametrów samej kamery. Składowe takie jak prędkość samochodu, informacje o rodzaju drogi i ograniczeniach na niej obowiązujących czy warunki atmosferyczne, wszystko to co może mieć wpływ na reakcję kierowcy i~hamowanie w~przypadku wystąpienia możliwego zagrożenia. Dodatkową możliwością jest rozszerzenie systemu o większą ilość możliwych alarmów tj. rezygnacja z dwóch stanów bezpiecznie/niebezpiecznie, natomiast wprowadzenie większej ilości akcji na przykład sugestie odnośnie zwiększonej uwagi kierowcy czy zmniejszenia prędkości.
+
+\hspace{0.5cm}
+Obecny system nie jest też odporny na wykonywanie zakrętów. Wykonując manewr kamera stale będzie pokrywać obszar przed maską samochodu co może prowadzić do fałszywych alarmów np. wykrycie samochodu trzymającego się własnego pasa, ale jadącego w przeciwnym kierunku do użytkownika.
+
+\hspace{0.5cm}
+W przypadku wykorzystania systemu w praktyce, poza dokładnością detekcji przeprowadzonej przez sieci ważny jest również czas, podczas którego analiza zostanie dokonana. Wszystkie architektury zostały przebadane z wykorzystaniem tylko jednego podejścia dlatego w ramach rozwinięcia pracy możliwe jest zastanowienie się nad implementacją innych sieci i modeli z rodzin na przykład R-CNN lub YOLO (darknet), których działanie może okazać się szybsze niż podejście zaprezentowane w pracy dyplomowej.

@@ -39,10 +39,30 @@
 \usepackage{color,calc}
 %\usepackage{soul} % pakiet z komendami do podkreślania tekstu
 \usepackage{float}
-\usepackage{subcaption}
 \usepackage{multirow}
+\usepackage{polski}
+\usepackage[polish]{babel}
 \usepackage{amsmath}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+\usepackage{color}
+\usepackage[T1]{fontenc}
+\usepackage{caption}
+\usepackage{hyperref}
+\usepackage{array}
+\usepackage{multicol}
+\usepackage{upgreek}
+\usepackage{caption}
+\usepackage{caption}
+\usepackage{mwe}
 \usepackage{esint}
+\usepackage{minted}
+\definecolor{green}{rgb}{0.1,0.1,0.1}
+\newcommand{\done}{\cellcolor{teal}done}  %{0.9}
+\newcommand{\hcyan}[1]{{\color{teal} #1}}
+\usepackage[shortlabels]{enumitem}
 \usepackage{ebgaramond} % pakiet z czcionkami garamond, potrzebny tylko do strony tytułowej, musi wystąpić przed pakietem tgtermes
 
 %% Aby uzyskać polskie literki w pdfie (a nie zlepki) korzystamy z pakietu czcionek tgterms. 
@@ -627,15 +647,15 @@ SPECJALNOŚĆ: & \@specjalnosc\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%  Metadane dokumentu 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\title{Rozpoznawanie niebezpiecznych sytuacji na drodze i uszkodzeń nawierzchni z wykorzystaniem głębokich sieci neuronowych}
-\titleShort{Rozpoznawanie niebezpiecznych sytuacji na drodze z wykorzystaniem DNN}
+\title{Rozpoznawanie niebezpiecznych sytuacji na drodze i uszkodzeń nawierzchni \\ z wykorzystaniem głębokich sieci neuronowych}
+\titleShort{Rozpoznawanie niebezpiecznych sytuacji z wykorzystaniem sieci neuronowych}
 \titleEN{Recognition of traffic hazards and road surface damages using deep neural networks}
 \author{Anna Bielecka}
 \uczelnia{POLITECHNIKA WROCŁAWSKA}
-\wydzial{WYDZIAŁ ELEKTRONIKI, FOTONIKI I MIKROSYSTEMÓW}
+\wydzial{WYDZIAŁ ELEKTRONIKI, FOTONIKI \\ I MIKROSYSTEMÓW}
 \kierunek{Automatyka i Robotyka (AIR)}
-\specjalnosc{Technologie informacyjne w systemach automatyki (AIR)}
-\promotor{Dr hab. inż. Andrzej Rusiecki}
+\specjalnosc{Technologie informacyjne w systemach automatyki (ART)}
+\promotor{Dr hab. inż. Andrzej Rusiecki \textcolor{white}{ TO NEW LINE} Katedra Informatyki Technicznej}
 \date{WROCŁAW, 2022}
 
 % Ustawienie odstępu od góry w nienumerowanych rozdziałach oraz wykazach:
@@ -657,6 +677,7 @@ SPECJALNOŚĆ: & \@specjalnosc\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\includeonly{skroty,rozdzial01} % jeśli chcemy kompilować tylko fragmenty, to można tu je wpisać
 
+\usepackage{subfig}
 \begin{document}
 % Tutaj można przełączyć odstęp między liniami
 %\SingleSpacing
@@ -693,10 +714,10 @@ SPECJALNOŚĆ: & \@specjalnosc\\
 %\addcontentsline{toc}{chapter}{Spis rysunków}
 \listoffigures*
 
-% \newpage
-% \mbox{}\pdfbookmark[0]{Spis listingów}{spisListingow.1}
-% %\addcontentsline{toc}{chapter}{Spis listingów}
-% \lstlistoflistings*
+\newpage
+\mbox{}\pdfbookmark[0]{Spis listingów}{spisListingow.1}
+%\addcontentsline{toc}{chapter}{Spis listingów}
+\lstlistoflistings*
 
 
 %{%
@@ -706,16 +727,16 @@ SPECJALNOŚĆ: & \@specjalnosc\\
 %}
 
 
-% \newpage
-% \mbox{}\pdfbookmark[0]{Spis tabel}{spisTabel.1}
-% %\addcontentsline{toc}{chapter}{Spis tabel}
-% \listoftables*
+\newpage
+\mbox{}\pdfbookmark[0]{Spis tabel}{spisTabel.1}
+%\addcontentsline{toc}{chapter}{Spis tabel}
+\listoftables*
 
 \include{skroty} %skróty można sobie pominąć
 \chapterstyle{default}
 \include{rozdzial01}
 \include{rozdzial02}
-\include{rozdzial03}
+%\include{rozdzial03}
 \include{rozdzial04}
 \include{rozdzial05}
 \include{rozdzial06}

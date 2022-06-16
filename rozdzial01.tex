@@ -1,13 +1,31 @@
 \chapter{Wstęp}
 
-Cel poniższej pracy polega na stworzeniu i zaimplementowaniu prototypu systemu służącego do analizy ruchu drogowego, pod kątem wykrywania sytuacji niebezpiecznych. Do zadań systemu należą
+% Od wielu lat rozpoznawanie obrazów (ang. computer vision) jest jednym z obszarów IT
+% cieszących się bardzo dużym zainteresowaniem. W ostatnich latach dzięki rozpowszechnieniu się głębokiego uczenia maszynowego (ang. deep learning) jej rozwój gwałtownie
+% przyspieszył i jest to dziedzina ciesząca się bardzo dużą popularnością wśród naukowców,
+% co potwierdzają statystyki biblioteki cyfrowej IEEE Xplore przedstawione na rysunku 1.
 
-\begin{enumerate}
-    \item Rozpoznanie na obrazie obiektów, które mogą wywołać sytuacje niebezpieczną tj. piesi, samochody, rowery, ubytki w nawierzchni
-    \item 
-\end{enumerate}
+
+\hspace{0.5cm}
+W ciągu kilku ostatnich lat coraz częściej pojawia się zagadnienie sztucznej inteligencji. Terminy takie jak ,,uczenie maszynowe'', ,,uczenie głębokie'' czy ,,sieci neuronowe'' stały się rozpoznawalne poza sektorami branży IT. Każdy z nich stale znajduje wiele zastosowań w dziedzinach związanych z pozyskiwaniem danych. Aplikowane są w różnorodnych zadaniach z dziedzin tj. inżynieria, finanse czy ekonomia. Szczególną popularnością cieszą się zadania przetwarzania głosu, pisma czy obrazów \cite{OsowskiSieci} wspomagające np. diagnostykę medyczną lub przemysł motoryzacyjny. 
+
+\hspace{0.5cm}
+Producenci pojazdów coraz częściej decydują się na implementację sztucznej inteligencji w celu poprawiania bezpieczeństwa i komfortu jazdy zarówno dla kierowcy, pasażerów jak i~pieszych. Od wielu lat możliwe są do zakupienia w salonach maszyny wykorzystujące oprogramowania do przetwarzania obrazu, wprowadzące udoskonalenia w postaci np. systemów monitorowania koncentracji kierowcy, rozpoznawania znaków drogowych i linii pasów ruchu lub systemu awaryjnego hamowania w przypadku pojawienia się przeszkody na drodze. Wykorzystywane do tego czujniki i LIDARy wbudowane w maszynę pozwalają na stałe mierzenie odległości dookoła pojazdu. 
+
+\hspace{0.5cm}
+Alternatywą dla  takiego rozwiązania okazują się metody deep learning oraz  sieci neuronowe, które z odpowiednią mocą obliczeniową, wykorzystują obraz pochodzący ze zwykłych kamer 2D, aby w czasie rzeczywistym przetwarzać przychodzące dane, umożliwiając dodatkowe wsparcie dla kierowcy w trakcie jazdy. System uczący się odpowiednich i istotnych cech na drodze, identyfikujący obiekty lub rozpoznający tzw. strefy swobodnej jazdy jest ważnym krokiem na drodze wspomagania kierowcy w trakcie podróży lub nawet drogą do włączenia do ruchu pojazdów umożliwiających jazdę bez udziału człowieka. 
+
+\section{Cel pracy}
+\hspace{0.5cm}
+Głównym celem pracy było przeanalizowanie możliwości różnych architektur głębokich sieci neuronowych, trenując je i stosując do rozwiązania problemu przetwarzania obrazów wykorzystując zbiory danych przedstawiających codzienne sytuacje na drogach.
+
+\hspace{0.5cm}
+Pozostała część projektu poświęcona jest zaimplementowaniu prototypu systemu służącego do analizy ruchu drogowego, pod kątem wykrywania sytuacji niebezpiecznych z wykorzystaniem wyuczonych wcześniej głębokich sieci. Do jego zadań powinno należeć rozpoznanie na obrazie obiektów, wszystkich obiektów niedaleko obserwatora tj. piesi, samochody, rowery, ubytki w nawierzchni, określenie typu takiej sytuacji oraz poinformowanie użytkownika o ewentualnym niebezpieczeństwie.
 
 \section{Struktura pracy}
+\hspace{0.5cm}
+Praca podzielona jest na pięć rozdziałów. Drugi rozdział zawiera w sobie zagadnienia związane z głębokimi sieciami neuronowymi, ich budowę, sposób działania oraz podstawową architekturę sieci konwolucyjnych. Trzeci rozdział opisuje gotowe rozwiązania i ogólnodostępne wyniki przeprowadzonych badań związanych z tematem niniejszej
+pracy magisterskiej. W czwartym rozdziale omówione zostały wszystkie narzędzia i biblioteki wykorzystane do przeprowadzenia badań oraz wykonania systemu detekcji niebezpieczeństw. Rozdział przedstawia również wybrane metody i architektury sieci oraz zbiory danych wykorzystywane do treningu. Kolejny rozdział obejmuje przedstawienie i analizę przeprowadzonych badań w zależności od wybranej architektury i zmienianych parametrów. Zaprezentowane zostało również działanie systemu do wykrywania niebezpieczeństw z wykorzystaniem wytrenowanego modelu sieci. Ostatnią częścią pracy jest ogólne podsumowanie efektów badań wraz ze wskazaniem możliwości dalszego rozwoju.
 
 
 %%%
